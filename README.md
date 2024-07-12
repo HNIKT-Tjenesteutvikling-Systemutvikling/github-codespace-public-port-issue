@@ -1,13 +1,13 @@
 # Running the project #
 Backend project:
-In the terminal, go to the backend and run "npm start"
+Open a terminal and run the command below.
 
 ```
 cd backend && npm install && npm start
 ```
 
 Frontend project:
-In a separate terminal go to the frontend and run the http-server command.
+In a separate terminal run the command below.
 On your first run you will be prompted to install the package. Type Y and hit Enter to accept.
 
 ```
