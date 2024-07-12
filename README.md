@@ -24,6 +24,8 @@ In the ports view, under visibility, right-click where it says 'Private' and sel
 
 Do this on both the backend and frontend ports.
 
+Finally, open port 8080 to run the frontend.
+
 
 # Recreating the issue #
 Info coming..
