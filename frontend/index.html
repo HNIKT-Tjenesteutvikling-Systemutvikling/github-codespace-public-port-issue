@@ -6,8 +6,33 @@
     <title>Public ports demo</title>
 </head>
 <body>
-    <button id="loadItems">Test</button>
+    <button id="loadItems">Get data from backend API</button>
     <ul id="itemsList"></ul>
-    <script src="script.js"></script>
 </body>
 </html>
+
+<script>
+    document.getElementById('loadItems').addEventListener('click', () => {
+    // Get the current host and protocol
+    const currentHost = window.location.host;
+    const protocol = window.location.protocol;
+
+    // Replace the port number with the one the backend is running on and create the base URL
+    const newHost = currentHost.replace('8080', '3000');
+    const baseUrl = `${protocol}//${newHost}`;
+
+    // Fetch the items from the backend
+    fetch(`${baseUrl}/items`)
+        .then(response => response.json())
+        .then(data => {
+            const itemsList = document.getElementById('itemsList');
+            itemsList.innerHTML = ''; // Clear current list
+            data.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.name;
+                itemsList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error fetching items:', error));
+});
+</script>
