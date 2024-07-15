@@ -1,18 +1,17 @@
-// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "Public ports demo",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"remoteUser": "node",
-	"forwardPorts": [
-		3000,
-		8080
-	],
+	"image": "mcr.microsoft.com/devcontainers/universal:2.7",
 	"portsAttributes": {
+		"8080": {
+			"label": "frontend",
+			"onAutoForward": "notify"
+		},
 		"3000": {
-			"label": "Express API",
+			"label": "backend",
 			"onAutoForward": "notify"
 		}
-	}
+	},
+	"forwardPorts": [
+		8080,
+		3000
+	]
 }

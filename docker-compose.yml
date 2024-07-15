@@ -1,0 +1,22 @@
+services:
+  # frontend:
+  #   volumes:
+  #    - ./frontend:/usr/src/frontend
+  #    - ./frontend/node_modules:/usr/src/frontend/node_modules
+  #   build:
+  #     context: frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 8080
+  #   tty: true
+
+  backend:
+    volumes:
+     - ./backend:/usr/src/backend
+     - ./backend/node_modules:/usr/src/backend/node_modules
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - 3000
+    tty: true
